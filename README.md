@@ -7,3 +7,4 @@ ridBag.embeddedToSbtreeBonsaiThreshold
         <entry name="network.http.useToken" value="false"/>
     </properties>
 select $path,name from (traverse out('e_instance_APP_businesses_BUSINESS') from (select from v_instance_app where name='app100') maxdepth 4) where name='business100'
+select loginId from v where instanceId is null and name like '%小%'
