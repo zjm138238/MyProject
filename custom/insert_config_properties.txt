@@ -1,0 +1,7 @@
+<properties>
+    <entry value="1" name="db.pool.min"/>
+    <entry value="50" name="db.pool.max"/>
+    <entry value="false" name="profiler.enabled"/>
+    <entry value="true" name="query.parallelAuto"/>
+    <entry value="1799999999" name="network.binary.maxLength"/>
+</properties>

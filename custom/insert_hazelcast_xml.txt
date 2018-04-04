@@ -1,0 +1,14 @@
+<network>
+    <port auto-increment="false">2434</port>
+    <join>
+            <multicast enabled="false">
+                    <multicast-group>235.1.1.1</multicast-group>
+                    <multicast-port>2434</multicast-port>
+            </multicast>
+            <tcp-ip enabled="true">
+                <member>MASTER_IP</member>
+                <member>REPLICA_IP_1</member>
+                <member>REPLICA_IP_2</member>
+            </tcp-ip>
+    </join>
+</network>
