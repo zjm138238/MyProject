@@ -8,8 +8,20 @@ notify_orientdb() {
     echo $mailbody | mail -s "$mailsubject" $TO_EMAIL
 }
 
+notify_keepalived() {
+    mailsubject="ip:$IP keepalived service is closed"
+    mailbody="`date '+%F %H:%M:%S'`: ip:$IP keepalived service is closed, please check it"
+    echo $mailbody | mail -s "$mailsubject" $TO_EMAIL
+}
+
+
 PID=`ps auxw | grep 'orientdb.www.path' | grep java | grep -v grep | awk '{print $2}'`
 if [ "x$PID" = "x" ]
 then
     notify_orientdb
-fi  
+fi       
+
+A=`ps -ef | grep "keepalived -D" | grep -v grep | wc -l`
+if [ $A -eq 0 ];then                               
+      notify_keepalived
+fi

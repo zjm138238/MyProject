@@ -79,6 +79,8 @@ setOrientdbUserNameAndPasswordAndNodeName() {
     send "$NODE_NAME\r"
     expect "|ONLINE|"
     puts "wait for it......"     
+    expect "OrientDB Server is active"
+    puts "wait for it......"    
     expect eof
 EOF
     #修改orientdb登录用户名
@@ -185,4 +187,3 @@ case $1 in
 esac
 
 exit 0
-
